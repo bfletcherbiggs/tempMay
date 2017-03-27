@@ -1,0 +1,83 @@
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+	font-size: inherit;
+}
+
+/*Footer STYLES*/
+
+footer.page-footer {
+    padding-top: 5px;
+    background-color: #0b2e3a;
+    margin-top: 0px:
+}
+
+/*top navigation STYLES*/
+nav ul a {
+    font-size: 1.3rem;
+}
+
+div.nav-wrapper {
+  background-color: #0b2e3a;
+
+}
+nav {
+height: 100px;
+
+}
+.nav-text-wrapper {
+padding-top: 24px;
+margin-right: 30px;
+
+}
+.brand-logo {
+margin-top: 10px;
+margin-left: 20px;
+
+}
+nav ul a:hover {
+    background-color: #00A6A6;
+}
+nav ul a.btn:hover {
+  background-color: #DE0000;
+
+}
+
+/*Home View STYLES*/
+#index-banner {
+background-color: #0b2e3a;
+
+}
+div.row.center {
+margin-bottom: 0px;
+
+}
+
+#download-button {
+background-color: #DE0000;
+
+}
+.htext {
+  color: white;
+}
+
+.type-effect {
+  text-align: center;
+  color:#fff;
+  text-decoration: none;
+}
+.typewrite {
+  color: #fff;
+}
+.iconbrain {
+  
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+  <title>Bondi AI | Estate Planning</title>
+
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- CSS  -->
+</head>
+
+<body>
+
+  <div class="" ng-app="willapp" >
+
+    <div class="indexheader">
+        <!-- Nav component -->
+        <nav-component></nav-component>
+
+      </div>
+
+
+        <div class="" >
+            <!-- View Router  -->
+            <ui-view></ui-view>
+
+        </div>
+
+        <div class="indexfooter">
+  <!-- Insert footer Component Here  -->
+  <footer-component></footer-component>
+        </div>
+
+    </div>
+    <!--  Scripts-->
+    <script src="/assets/js/init.js"></script>
+    
+
+    <!-- Above is Materilize Below are Angular Scripts -->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.min.js" charset="utf-8"></script>
+
+
+    <!-- ANGULAR DEPENDECIES -->
+    <script src="app.js" ></script>
+    <script src="views/chat/chatCtrl.js"></script>
+    <script src="views/chat/chatService.js"></script>
+    <script src="navigation/footer/footer.js"></script>
+    <script src="navigation/header/header.js"></script>
+
+    <!-- Materialze Scripts -->
+    <script src="/assets/js/materialize.js"></script>
+
+
+</body>
+
+</html>
