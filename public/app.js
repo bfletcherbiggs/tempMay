@@ -8,20 +8,36 @@ angular.module("willapp", ["ui.router"])
       templateUrl: "/views/chat/chat_view.html",
       controller: "chatCtrl"
     })
+    .state("chat.question", {
+      url: "/question/:returning",
+      template: '<h1>Hi</h1>',
+      parent: "chat",
+      controller: "willCtrl"
+    })
+    .state("chat.personinfo", {
+      url: "/personinfo/:returning",
+      templateUrl: "/views/documents/will/views/personalinfo.html",
+      parent: "chat",
+      controller: "willCtrl"
+
+
+    })
       .state("home", {
         url: "/",
         templateUrl: "/views/home/home.html",
-        controller: "chatCtrl"
+        controller: "homeCtrl"
       })
       .state("login", {
         url: "/login",
-        templateUrl: "/views/chat/login.html",
-        controller: "chatCtrl"
+        templateUrl: "/views/login/login.html",
+        controller: "loginCtrl"
       })
       .state("contact", {
         url: "/contact",
         templateUrl: "/views/contact/contact.html",
-        controller: "chatCtrl"
+
       })
+
+
 
 })

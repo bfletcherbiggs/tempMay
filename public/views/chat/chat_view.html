@@ -1,20 +1,39 @@
-<div class="header">
+<div id="chatviewmain" class="header container">
+	<!-- <h4>Watson Chat</h4>
+	<a
+           ui-sref="chat.personinfo">
+          Click Here to Load View
+        </a> -->
 
+	<div class="row">
+		<div class="chat-container col s6">
 
+			<div class="chat-messages">
+									<div class="chat-header">
+											<div class="angularjs-chat-logo"></div>
+										Watson Chat
+									</div>
+									<div ng-repeat="message in messages track by $index" >
 
-<h4>Watson Chat</h4>
-<div class="jumbotron">
+											<div class="sent-message" ng-class="{ 'sent-messageleft': $even, 'sent-message': $odd }">
+													{{ message}}
+											</div>
 
+											<!-- <div class="clear"></div> -->
 
-	<div ng-repeat="message in messages">{{ message}}</div>
+									</div>
+				</div>
 
+			<form name="chatsubmit" validate ng-submit="chatsubmit.$valid && postMessage(userMessage)" class="chat-input">
+				<input ng-model="userMessage" placeholder="Type to speak to watson" type="text" required>
+				<input type="submit" required class="send-icon" value="" ng-disabled="chatsubmit.$invalid">
+				<input ng-disabled="chatsubmit.$invalid" type="submit" value=" ">
+			</form>
 
-  <form ng-submit="postMessage(userMessage)">
-		<input ng-model="userMessage" type="text" placeholder="Hello!">
-
-	</form>
-
-</div>
-
-
+		</div>
+		<div class="col s6">
+			<ui-view></ui-view>
+			<!-- <will-component  data-to-pass="data-to-pass"></will-component> -->
+		</div>
+	</div>
 </div>

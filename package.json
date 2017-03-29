@@ -12,6 +12,8 @@
     "angular-chat": "^1.0.9",
     "body-parser": "^1.17.1",
     "express": "^4.15.2",
+    "knex": "^0.12.9",
+    "pg": "^6.1.5",
     "prompt-sync": "^4.1.4",
     "watson-developer-cloud": "^2.27.1"
   }
