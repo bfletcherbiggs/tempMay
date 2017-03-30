@@ -4,9 +4,9 @@ var ConversationV1 = require('watson-developer-cloud/conversation/v1');
 
 // Set up Conversation service.
 var conversation = new ConversationV1({
-  username: 'd24db3d0-4b52-456b-92f5-4edf247559a3', // replace with username from service key
-  password: 'F65So6MdGw58', // replace with password from service key
-  path: { workspace_id: '4454b870-3776-4619-b49b-fb88916adf36' }, //4454b870-3776-4619-b49b-fb88916adf36 replace with workspace ID
+  username: 'ff770025-998a-4da1-ad39-8ac798a71695', // replace with username from service key
+  password: 'GmfK7l4rnVqS', // replace with password from service key
+  path: { workspace_id: '00ae8602-e60d-436c-a5d1-f3f76de3a2c1' }, //4454b870-3776-4619-b49b-fb88916adf36 replace with workspace ID
   version_date: '2017-02-03'
 });
 // Start conversation with empty message.
@@ -48,6 +48,7 @@ module.exports = {
         if (err) {
           console.error(err); // something went wrong
           return;
+
         }
 
         // If an intent was detected, log it out to the console.

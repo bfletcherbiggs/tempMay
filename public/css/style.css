@@ -260,6 +260,9 @@ div.sent-messageleft {
     animation: received-message 1.2s ease-out 0s;
     margin-right: 25%;
 }
+div.sent-message.blank {
+  display: none;
+}
 
 }
 

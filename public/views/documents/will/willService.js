@@ -1,4 +1,4 @@
-angular.module('willapp').service("willService", function($http){
+angular.module('willapp').service("willService", function($http, chatService){
 
   this.postUserInfo = function(data) {
         return $http.post('/api/user/will/userinfo', data).then(function(response){
@@ -10,6 +10,37 @@ angular.module('willapp').service("willService", function($http){
           return err;
         })
     }
+
+    this.calculateAssets = function(estatevalue) {
+
+      var summed = 0;
+
+      for (var key in estatevalue) {
+        summed += estatevalue[key];
+      };
+
+      if(summed >750000) {
+        // Send standard message to Watson: 'Assets > 750000'
+        return "a message"
+        // return $http.post('/watson/message',{message: message}).then(function(response){
+        //
+        //   return response.data
+        //
+        // })
+      }
+      else {
+        // Send response to watson
+        return "2d0ap53reh assetview"
+        // return $http.post('/watson/message',{message: message}).then(function(response){
+        //   console.log(context)
+        //   return response.data
+        //
+        // })
+      }
+
+
+    }
+
 
 
 })

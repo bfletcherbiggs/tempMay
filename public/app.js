@@ -19,8 +19,12 @@ angular.module("willapp", ["ui.router"])
       templateUrl: "/views/documents/will/views/personalinfo.html",
       parent: "chat",
       controller: "willCtrl"
-
-
+    })
+    .state("chat.estatevalue", {
+      url: "/estatevalue/:returning",
+      templateUrl: "/views/documents/will/views/estateValue.html",
+      parent: "chat",
+      controller: "willCtrl"
     })
       .state("home", {
         url: "/",
