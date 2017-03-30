@@ -13,6 +13,7 @@ $scope.test = "will ctrl is working"
     // console.log(estatevalue)
     var message = willService.calculateAssets(estatevalue)
     $scope.$parent.postSystemMessage(message)
+  
     // chatService.postMessage(message).then(function(response) {
     //   console.log(response)
     // })

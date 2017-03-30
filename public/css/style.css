@@ -6,9 +6,9 @@
  * Made By MaterializeCSS.com
  */
  *{
-  margin:auto;
-  box-sizing: border-box;
-  padding:0;
+  /*margin:auto;*/
+  /*box-sizing: border-box;*/
+  /*padding:0;*/
   /*font-family: 'Oswald';*/
 }
 ul{
@@ -31,7 +31,7 @@ ul{
 footer.page-footer {
     padding-top: 5px;
     background-color: #0b2e3a;
-    margin-top: 0px:
+    /*margin-top: 0px:*/
 }
 
 /*top navigation STYLES*/
@@ -159,36 +159,46 @@ background-color: #DE0000;
    }
 
    /*Chat STYLES*/
-   /*#chatviewmain {
 
-     min-height:100vh;*/
+
+   #chatviewmain {
+     height:88vh;
    }
 
 
-   div.chat-container {
-    display: flex;
-    flex-direction: column ;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    overflow: auto;
+div.mainchat.row {
+    height: 100%;
+}
 
-    /*height: 900px;*/
+   div.chat-container {
+
+     height: 100%;
+    display: flex;
+    flex-flow: column nowrap ;
+    overflow: scroll;
+
+
+
+
+
+
+}
+#inputboxcontain {
+
+
 
 }
 form.chat-input {
-    position: relative;
-    order: 2;
+
+
     height: 62px;
     background: rgba(0, 0, 0, 0.04);
-    overflow: scroll ;
+    overflow: hidden ;
 }
 div.chat-messages {
+  height: 100%;
 
-    order: 1;
-    flex: 1;
+
     overflow: scroll;
     overflow-x: hidden;
 
@@ -238,7 +248,7 @@ div.sent-message {
     display: inline-block;
     color: rgba(32,40,70,0.9);
     padding: 14px;
-    font-size: 0.8em;
+    font-size: 0.9em;
     font-weight: 400;
     background: rgba(233,234,243,1.0);
     animation: sent-message 0.6s ease-out 0s;
@@ -254,7 +264,7 @@ div.sent-messageleft {
     color: rgba(32,40,70,0.9);
     padding: 12px;
     border-left: 3px solid #00A6A6;
-    font-size: 0.8em;
+    font-size: 0.95em;
     font-weight: 400;
     background: rgba(255,255,255,0.9);
     animation: received-message 1.2s ease-out 0s;
@@ -304,12 +314,13 @@ User Input
 form.chat-input input[type="text"] {
     width: 80%;
     color: rgba(32,40,70,0.9);
+
     padding: 20px;
     background: transparent;
 }
 
 form.chat-input input[type="submit"] {
-    position: absolute;
+    /*position: absolute;*/
     bottom: 10px;
     right: 10px;
     border-radius: 100px;
@@ -320,19 +331,18 @@ form.chat-input input[type="submit"] {
     height: 42px;
     overflow: hidden;
 }
+form.chat-input input[type="submit"].send-icon:focus{
+  color: white;
+  backgrou
+}
 
 form.chat-input input[type="submit"].send-icon {
-    background: #E8E6E1 url("/assets/newsend-icon.png");
+    background: url("/assets/newsend-icon.png");
     background-size: 60%;
     background-repeat: no-repeat;
     background-position: 7px 8px;
 }
-form.chat-input input[type="submit"].sent-indicator {
-    opacity: 0;
-    background: rgba(144,134,251,);
-    width: 42px;
-    height: 42px;
-}
+
 form.chat-input input[type="submit"].sending {
     animation: send-indicator 0.1s ease-out 0s;
 }

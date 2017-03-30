@@ -1,8 +1,7 @@
 <div id="chatviewmain" class="header container">
 
-	<div class="row">
+	<div class="mainchat row">
 		<div class="chat-container col s6">
-
 			<div class="chat-messages">
 									<div class="chat-header">
 										Watson Chat
@@ -14,16 +13,15 @@
 											</div>
 
 											<!-- <div class="clear"></div> -->
-
 									</div>
 				</div>
-
+			<div id="inputboxcontain">
 			<form name="chatsubmit" validate ng-submit="chatsubmit.$valid && postMessage(userMessage)" class="chat-input">
 				<input ng-model="userMessage" placeholder="Type to speak to watson" type="text" required>
 				<input type="submit" required class="send-icon" value="" ng-disabled="chatsubmit.$invalid">
-				<input ng-disabled="chatsubmit.$invalid" type="submit" value=" ">
+				<!-- <input ng-disabled="chatsubmit.$invalid" type="submit" value=" "> -->
 			</form>
-
+				</div>
 		</div>
 		<div class="col s6">
 			<ui-view></ui-view>
