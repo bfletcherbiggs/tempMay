@@ -1,5 +1,7 @@
 angular.module("willapp").controller("homeCtrl", function($scope){
 
+
+
   var TxtType = function(el, toRotate, period) {
           this.toRotate = toRotate;
           this.el = el;

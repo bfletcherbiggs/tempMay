@@ -1,0 +1,64 @@
+<div class="inputform-watsonlooktext">
+Please add your children below.
+</div>
+<div class="animated fadeIn">
+<form class="input-field inline">
+<div ng-repeat="item in numberOfInputs track by $index" >
+  <div class="childname">
+    <input placeholder="Name of Child" id="name-of-child-{{$index}}" type="text" ng-model="numberOfInputs[$index].child">
+    <!-- <label for="name-of-child-{{$index}}">Name Of Child</label> -->
+  </div>
+  <div class="childdob input-field inline">
+    <input placeholder="Date of Birth" id="date-{{$index}}" class="datepicker" type="text" ng-model="numberOfInputs[$index].dob">
+  </div>
+  <div class="childdob input-field inline">
+    <input id="biological-{{$index}}" type="radio" class="filled-in" value="biological" ng-model="numberOfInputs[$index].biological"/>
+      <label for="biological-{{$index}}">Biological</label>
+
+      <input id="adopted-{{$index}}" type="radio" class="filled-in" value="adopted" ng-model="numberOfInputs[$index].biological"/>
+        <label for="adopted-{{$index}}">Adopted</label>
+
+  </div>
+</div>
+  <button class="btn waves-effect waves-light" ng-click="addInput()" type="button" name="button">+Add Child</button>
+  <button class="btn waves-effect waves-light" ng-click="logInputs()" type="button" name="button">See Inputs</button>
+</form>
+
+</div>
+<!-- <script type="text/javascript">
+
+
+
+
+
+</script> -->
+<!-- ORIGINAL ABOVE NEW BELOW  -->
+
+<!-- <div class="inputform-watsonlooktext">
+Please add your children below Test.
+</div>
+<! <div class="animated fadeIn"> -->
+ <!-- <form class="input-field inline" ng-repeat="item in numberOfInputs track by $index" >
+
+  <div class="childname">
+    <input  id="name-of-child"type="text" ng-model="numberOfInputs.child" ng-repeat="item in numberOfInputs track by $index"  >
+    <label for="name-of-child">Name Of Child</label>
+  </div>
+<div class="">
+  <div class="childdob input-field inline">
+    <input class=" datepicker " id="dob" type="date" ng-model="numberOfInputs.dob" ng-repeat="item in numberOfInputs track by $index">
+    <label for="dob">Date of Birth<i class="material-icons left">date_range</i></label>
+  </div>
+  <div class="childdob input-field inline">
+    <input type="checkbox" class="filled-in" id="filled-in-bio" checked="checked"  ng-model="numberOfInputs.biological" ng-repeat="item in numberOfInputs track by $index"/>
+      <label for="filled-in-bio">Biological</label>
+
+      <input type="checkbox" class="filled-in" id="filled-in-adopt" checked="checked"  ng-model="numberOfInputs.adopted" ng-repeat="item in numberOfInputs track by $index"/>
+      <label for="filled-in-adopt">Adopted</label>
+
+  </div>
+
+</div>
+</form>
+  <button class="btn waves-effect waves-light" ng-click="addInput()" type="button" name="button">+Add Child</button>
+  <button class="btn waves-effect waves-light" ng-click="logInputs()" type="button" name="button">See Inputs</button>

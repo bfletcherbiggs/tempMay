@@ -1,0 +1,50 @@
+<div class="inputform-watsonlooktext childviewonetoptext" >
+    The following paragraph will be inputed in the will, below confirm Yes to add this to the powers clause of your Will No to exclude it.
+</div>
+
+<div class="childone-animate animated fadeIn">
+    <div class="childq1" ng-show="!prego">
+        <div class="childone-text">
+            Are you /spouse /parter pregnant with your child?
+        </div>
+        <form class="childone-form">
+            <div class="row center">
+                <a ng-click="pregoresponseyes()" id="yesbtn" class="btn waves-effect waves-light yes-button">YES</a>
+                <a ng-click="prego = !prego" id="nobtn" class="btn waves-effect waves-light deny-button">NO</a>
+            </div>
+        </form>
+    </div>
+    <div class="childq2" ng-hide="planToInclude">
+        <div class="childone-text">
+            Do you plan on having any children in the future that you want to include in your Estate Plan?
+        </div>
+        <form class="childone-form">
+            <div class="row center">
+                <a ng-click="futureChildrenAnswer()" id="yesbtn" class="btn waves-effect waves-light yes-button">YES</a>
+                <a ng-click="planToInclude = !planToInclude" id="nobtn" class="btn waves-effect waves-light deny-button">NO</a>
+            </div>
+        </form>
+    </div>
+    <div class="childq3" ng-hide="stepchildquestion">
+        <div class="childone-text">
+            Do you have any Step Children?
+        </div>
+        <form class="childone-form">
+            <div class="row center">
+                <a ng-click="stepchildquestion = !stepchildquestion" id="yesbtn" class="btn waves-effect waves-light yes-button">YES</a>
+                <a ui-sref="chat." id="nobtn" class="btn waves-effect waves-light deny-button">NO</a>
+            </div>
+        </form>
+    </div>
+    <div class="childq4 animated fadeIn" ng-show="stepchildquestion">
+        <div class="childone-text" >
+            Do you want to provide for your step children in your will?
+        </div>
+        <form class="childone-form">
+            <div class="row center">
+                <a ui-sref="info" id="yesbtn" class="btn waves-effect waves-light yes-button">YES</a>
+                <a ui-sref="home" id="nobtn" class="btn waves-effect waves-light deny-button">NO</a>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+<div class="inputform-watsonlooktext">
+This is your legal Name and current address. Will use these inputs on the will.
+</div>
+<div class="animated fadeIn">
+  <div class="row">
+    <form class="col 12 input-field" >
+      <div class="">
+        <input type="text" name="personfirst_name" ng-model="data.ufirstName" required />
+        <label for="personfirst_name">First Name</label>
+      </div>
+      <div class="">
+        <input type="text" name="middle_name" ng-model="data.uMiddleName" required />
+        <label for="middle_name">Middle Name</label>
+      </div>
+        <!-- <label for="last_name">Middle Name</label>
+        <input type="text" name="lastName" ng-model="data.ulastName" required />
+        <p>Other Names you use to sign Documents <input type="text" name="OtherName" ng-model="data.uOtherName" required /></p> -->
+        <button class=" btn waves-effect waves-light" ng-click="SendData(data)">Submit</button>
+
+    </form>
+        <br>
+
+    </div>
+</div>

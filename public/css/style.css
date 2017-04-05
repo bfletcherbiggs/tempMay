@@ -31,7 +31,12 @@ ul{
 footer.page-footer {
     padding-top: 5px;
     background-color: #0b2e3a;
+
     /*margin-top: 0px:*/
+}
+.container-footer {
+    text-align: center;
+    margin: auto;
 }
 
 /*top navigation STYLES*/
@@ -162,32 +167,26 @@ background-color: #DE0000;
 
 
    #chatviewmain {
-     height:88vh;
+     height:78vh;
+     /*height: 100%;*/
+
+
    }
 
 
 div.mainchat.row {
     height: 100%;
+
 }
 
    div.chat-container {
-
+     height: calc(100% - 100px);
      height: 100%;
     display: flex;
     flex-flow: column nowrap ;
     overflow: scroll;
-
-
-
-
-
-
 }
-#inputboxcontain {
 
-
-
-}
 form.chat-input {
 
 
@@ -320,12 +319,11 @@ form.chat-input input[type="text"] {
 }
 
 form.chat-input input[type="submit"] {
-    /*position: absolute;*/
     bottom: 10px;
     right: 10px;
     border-radius: 100px;
-    background: url("/assets/send-icon.png");
-    background-size:contain;
+    background: url("/assets/newsend-icon.png");
+    background-size:cover;
     color: rgba(255,255,255,1.0);
     width: 42px;
     height: 42px;
@@ -341,6 +339,7 @@ form.chat-input input[type="submit"].send-icon {
     background-size: 60%;
     background-repeat: no-repeat;
     background-position: 7px 8px;
+
 }
 
 form.chat-input input[type="submit"].sending {
@@ -349,3 +348,128 @@ form.chat-input input[type="submit"].sending {
 button, input[type="submit"] {
     cursor: pointer;
 }
+
+/*=====================
+Views Main Conainer
+=======================*/
+
+.views-main-container {
+   height:auto;
+   padding-left: 10px;
+   height: 78vh;
+   overflow: auto;
+
+
+}
+
+.inputform-watsonlooktext {
+  border-left: 3px solid #00A6A6;
+  font-size: 0.9em;
+  font-weight: 400;
+  border-radius: 2px;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-bottom: 35px;
+  padding: 12px;
+  animation: received-message 1.2s ease-out 0s;
+  /*height: 10vh;*/
+
+}
+
+#yesbtn {
+  background-color: green;
+}
+#nobtn {
+  background-color: #DE0000;
+}
+/*================
+WILLS VIEW SPECIFIC
+=================*/
+.will-language {
+font-family: Georgia, Times, 'Times New Roman', serif;
+font-size: 13px;
+/*border-bottom: .8px solid black;*/
+border-top: .8px solid black;
+padding-left: 15px;
+padding-right: 15px;
+
+}
+/*================
+MILITARY VIEW
+================*/
+.millitary-buttons {
+border-bottom: .8px solid black;
+padding-top: 40px;
+padding-bottom: 20px;
+
+}
+.will-head-doc {
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 10px;
+}
+.military-animate {
+ animation-delay: 1.3s;
+ background-color: #F7F7F7;
+
+}
+
+/*=================
+AttorneyReferrel
+=================*/
+.attorney-animate {
+  animation-delay: 1.3s;
+  background-color: #F7F7F7;
+  margin-top: 10px;
+}
+.materialize-textarea {
+  background-color: #F7F7F7;
+}
+.att-sub-button {
+margin-left: 20px;
+margin-bottom: 10px;
+
+}
+.att-form {
+  margin: 10px;
+  padding-top: 15px;
+}
+
+/*=================
+Children 1 View
+=================*/
+.childone-animate {
+
+  animation-delay: 1.3s;
+  background-color: #F7F7F7;
+  margin-top: 10px;
+   /*height: 68vh;*/
+
+
+}
+.childone-form {
+  margin: 10px;
+  padding-top: 15px;
+  padding-bottom: 20px;
+}
+
+.childone-text {
+  text-align: center;
+  padding-top: 15px;
+  font-size: 18px;
+}
+
+.childq2 {
+  padding-left: 20px;
+  padding-right: 20px;
+
+}
+.childviewonetoptext {
+  height: 65px;
+}
+/*=================
+Children 2 View
+=================*/

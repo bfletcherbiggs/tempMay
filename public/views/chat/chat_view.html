@@ -2,6 +2,16 @@
 
 	<div class="mainchat row">
 		<div class="chat-container col s6">
+			<!-- <a ui-sref="chat.bizexplaination" id="download-button" class="btn-large waves-effect waves-light home-button"> viewtest</a>
+			<a ui-sref="chat.childrenone" id="download-button" class="btn-large waves-effect waves-light home-button"> viewtest</a>
+			<a ui-sref="chat.childrentwo" id="download-button" class="btn-large waves-effect waves-light home-button"> viewtest</a>
+			<a ui-sref="chat.childrenthree" id="download-button" class="btn-large waves-effect waves-light home-button"> viewtest</a>
+			<a ui-sref="chat.disinheritone" id="download-button" class="btn-large waves-effect waves-light home-button"> viewtest</a>
+			<a ui-sref="chat.disinherittwo" id="download-button" class="btn-large waves-effect waves-light home-button"> viewtest</a>
+			<a ui-sref="chat.maritalStatus" id="download-button" class="btn-large waves-effect waves-light home-button"> viewtest</a>
+			<a ui-sref="chat.millitaryService" id="download-button" class="btn-large waves-effect waves-light home-button"> viewtest</a>
+			<a ui-sref="chat.minorGuardian" id="download-button" class="btn-large waves-effect waves-light home-button"> viewtest</a>
+			<a ui-sref="chat.pregnant" id="download-button" class="btn-large waves-effect waves-light home-button"> viewtest</a> -->
 			<div class="chat-messages">
 									<div class="chat-header">
 										Watson Chat
@@ -16,14 +26,14 @@
 									</div>
 				</div>
 			<div id="inputboxcontain">
-			<form name="chatsubmit" validate ng-submit="chatsubmit.$valid && postMessage(userMessage)" class="chat-input">
+			<form name="chatsubmit" validate ng-submit="chatsubmit.$valid && postUserMessage(userMessage)" class="chat-input">
 				<input ng-model="userMessage" placeholder="Type to speak to watson" type="text" required>
 				<input type="submit" required class="send-icon" value="" ng-disabled="chatsubmit.$invalid">
 				<!-- <input ng-disabled="chatsubmit.$invalid" type="submit" value=" "> -->
 			</form>
 				</div>
 		</div>
-		<div class="col s6">
+		<div class="views-main-container col s6">
 			<ui-view></ui-view>
 			<!-- <will-component  data-to-pass="data-to-pass"></will-component> -->
 		</div>
