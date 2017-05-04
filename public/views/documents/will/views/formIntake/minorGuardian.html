@@ -1,0 +1,44 @@
+<div class="inputform-watsonlooktext">
+  It appears you have minor children, lets select from the following options to appoint guardiansihp to your minor children.
+</div>
+<br>
+<div class="military-animate animated fadeIn">
+<div class="will-language">
+  <div class="will-head-doc">Guardianship</div>
+  <p class="military-yes-clause">If your children are minors (under age 18) when you die, and if the other natural/adopted parent is not alive or for any reason cannot act as guardian, the court may appoint the person(s) you name to act as legal guardian(s) of your minor children. The individual(s) named will have physical control and custody of the children until they reach 18. If you have sole custody, upon your death, the child’s other natural or adopted parent will presumptively act as parent even if you provide for someone else to serve as guardian in your Will. You should still name a guardian, however, in case the child’s other natural or adopted parent dies before you, is unwilling to act as parent, cannot be located or for any reason cannot act as guardian.
+</p>
+
+<form class="" >
+  <p class="minorheading">Guardian</p>
+
+  <input placeholder="Name of Guardian"  type="text" ng-model="guardian.gname">
+
+
+  <input placeholder="City"  type="text" ng-model="guardian.gcity">
+
+
+  <input placeholder="State"  type="text" ng-model="guardian.gstate">
+
+<div class="" ng-show="cogur">
+  <p class="minorheading">Co-Guardian</p>
+  <input placeholder="Name of Co-Guardian"  type="text" ng-model="guardian.gconame">
+
+
+  <input placeholder="City" type="text" ng-model="guardian.gcocity">
+
+
+  <input placeholder="State"  type="text" ng-model="guardian.gcostate">
+
+</div>
+<a ng-click="cogur = !cogur" id="" class="btn waves-effect waves-light yes-button">+ Add Co Guardian</a>
+
+</form>
+</div>
+<div class="millitary-buttons">
+  <div class="row center">
+        <a ng-click="submitGuardian(guardian)" id="yesbtn" class="btn waves-effect waves-light yes-button">Submit</a>
+        <a ng-click="militaryno()" id="nobtn" class="btn waves-effect waves-light deny-button">DO NOT APPOINT Guardian</a>
+  </div>
+
+</div>
+</div>

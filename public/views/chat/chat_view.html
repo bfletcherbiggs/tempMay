@@ -18,11 +18,12 @@
 									</div>
 									<div ng-repeat="message in messages track by $index" >
 
-											<div class="sent-message" ng-class="{ 'sent-messageleft': $even, 'sent-message': $odd, 'blank': message === '' }">
+											<div id="newMessage" class="sent-message" ng-class="{ 'sent-messageleft': $even, 'sent-message': $odd, 'blank': message === '' }">
 													{{ message}}
 											</div>
 
 											<!-- <div class="clear"></div> -->
+
 									</div>
 				</div>
 			<div id="inputboxcontain">
@@ -31,7 +32,8 @@
 				<input type="submit" required class="send-icon" value="" ng-disabled="chatsubmit.$invalid">
 				<!-- <input ng-disabled="chatsubmit.$invalid" type="submit" value=" "> -->
 			</form>
-				</div>
+			</div>
+
 		</div>
 		<div class="views-main-container col s6">
 			<ui-view></ui-view>

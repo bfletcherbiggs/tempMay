@@ -13,6 +13,11 @@ angular.module("willapp", ["ui.router"])
     templateUrl: "/views/login/login.html",
     controller: "loginCtrl"
   })
+  .state("newlogin", {
+    url: "/newlogin",
+    templateUrl: "/views/login/newUserLogin.html",
+    controller: "loginCtrl"
+  })
   .state("contact", {
     url: "/contact",
     templateUrl: "/views/contact/contact.html",
@@ -21,6 +26,7 @@ angular.module("willapp", ["ui.router"])
       url: "/chat",
       templateUrl: "/views/chat/chat_view.html",
       controller: "chatCtrl"
+      // resolve: {authenticate: authenticate}
     })
     .state("chat.progress", {
       url: "/progress/:returning",
@@ -106,4 +112,45 @@ angular.module("willapp", ["ui.router"])
       parent: "chat",
       controller: "willCtrl"
     })
+    .state("chat.executor", {
+      url: "/executor/:returning",
+      templateUrl: "/views/documents/will/views/formIntake/executor.html",
+      parent: "chat",
+      controller: "willCtrl"
+    })
+    .state("chat.spec", {
+      url: "/spec/:returning",
+      templateUrl: "/views/documents/will/views/formIntake/specificbequest.html",
+      parent: "chat",
+      controller: "willCtrl"
+    })
+    .state("chat.residual", {
+      url: "/residual/:returning",
+      templateUrl: "/views/documents/will/views/formIntake/residual.html",
+      parent: "chat",
+      controller: "willCtrl"
+    })
+
+    // function authenticate($q, $state, $timeout, $rootScope, $http) {
+    //  if ($rootScope.isAuthenticated) {
+    //    return $q.when()
+    //  } else {
+    //    $timeout(function() {
+    //      $state.go('login')
+    //    })
+    //    return $q.reject()
+    //  }
+
+ //      var deferred = $q.defer();
+ //      $http.get('/api/user/login/currentuser').then(function(response) {
+ //        if (response.status === 200) {
+ //          deferred.resolve()
+ //        } else {
+ //          $state.go('home')
+ //          deferred.reject()
+ //        }
+ //      })
+ //      return deferred.promise;
+ //
+ // }
 })

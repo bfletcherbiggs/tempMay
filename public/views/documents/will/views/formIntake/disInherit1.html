@@ -1,29 +1,22 @@
 <div class="inputform-watsonlooktext">
 Please add the Name of Person you are wishing to Disinherit.
 </div>
-<div class="animated fadeIn">
-<form class="input-field inline">
+<div class="disanimate animated fadeIn">
+  <form class="input-field inline" >
+    <div class="" ng-repeat="item in user track by $index">
 
-  <div class="childname">
-    <input ng-repeat="item in numberOfInputs track by $index" id="name-of-child"type="text" ng-model="numberOfInputs[$index]">
-    <label for="name-of-child">Name Of Child</label>
+
+    <input  placeholder="Name of Person to Disinherit" id="disinheritname-{{$index}}" type="text" ng-model="user[$index].disinheritname">
+
+    <input class="datepicker" id="disinheritdob-{{$index}}" type="text"  placeholder="Relationship to You" ng-model="user[$index].disinheritdob">
+    </div>
+
+  </form><br>
+  <div class="submitbuttonchild">
+
+
+    <button class="btn waves-effect waves-light" ng-click="disaddInput()" type="button" name="button">+Add Individual</button><br><br>
+
+    <button class="btn waves-effect waves-light" ng-click="disInPerson(user)" type="button" name="button">Submit</button>
   </div>
-<div class="">
-  <div class="childdob input-field inline">
-    <input ng-repeat="item in numberOfInputs track by $index" id="dob" type="text" ng-model="numberOfInputs[$index]">
-    <label for="dob">Date of Birth</label>
-  </div>
-  <div class="childdob input-field inline">
-    <input type="checkbox" class="filled-in" id="filled-in-bio" checked="checked"  ng-model="numberOfInputs[$index]" ng-repeat="item in numberOfInputs track by $index"/>
-      <label for="filled-in-bio">Male</label>
-      <input type="checkbox" class="filled-in" id="filled-in-adopt" checked="checked"  ng-model="numberOfInputs[$index]" ng-repeat="item in numberOfInputs track by $index"/>
-        <label for="filled-in-adopt">Female</label>
-
-  </div>
-
-</div>
-  <button class="btn waves-effect waves-light" ng-click="addInput()" type="button" name="button">+Add Child</button>
-  <button class="btn waves-effect waves-light" ng-click="logInputs()" type="button" name="button">See Inputs</button>
-</form>
-
 </div>

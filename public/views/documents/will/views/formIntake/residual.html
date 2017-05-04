@@ -1,0 +1,54 @@
+<div class="inputform-watsonlooktext">
+  Please look carefully at the different ways your estate can be distributed, if you have a question feel free to ask :)
+</div>
+<br>
+<div class="military-animate animated fadeIn">
+<div class="will-language">
+  <div class="will-head-doc">Distribution of the Remainder of Your Estate</div><br>
+
+<form class="" >
+  <div class="">
+    <input  name="group1" id="marriedonce" type="radio" class="filled-in" value="marriedonce" ng-model="residual.distribution"/>
+    <label for="marriedonce">My Spouse. If my spouse is not living upon my death, the item(s) shall be distributred to my issue per stripes. "Issue per stripes" means that your bequest will follow each particular child's bloodline.</label><br>
+
+    <input name="group1" id="marriedbutdivorced" type="radio" class="filled-in" value="marriedbutdivorced" ng-model="residual.distribution"/>
+    <label for="marriedbutdivorced">My spouse. If my spouse is not living upon my death, the item(s) shall be distributed to my then living children.</label><br>
+
+    <input name="group1"  id="widow" type="radio" class="filled-in" value="widow" ng-model="residual.distribution"/>
+    <label for="widow">My spouse. If my spouse is not living upon my death, the item(s) shall be distributed to my then living grandchildren.
+    </label><br>
+
+    <input ng-click="spouseyes = !spouseyes" name="group1" id="divorced" type="radio" class="filled-in" value="divorced" ng-model="residual.distribution"/>
+    <label for="divorced">
+      My spouse. If my spouse is not living upon my death, the item(s) shall be distributed to a named charity. Please name the other charity or charities:</label><br>
+
+     <input ng-click="spouseyes = !spouseyes" name="group1" id="divorced" type="radio" class="filled-in" value="divorced" ng-model="residual.distribution"/>
+    <label for="divorced">
+      Named individual(s). If the named individual(s) is/are not living upon my death, the item(s) shall be distributed to another named individual or individuals.
+  Please name the other individual(s):</label><br>
+
+    <input name="group1"  id="single" type="radio" class="filled-in" value="single" ng-model="residual.distribution"/>
+    <label for="single">My then living children. If I have no living children, the item(s) shall be distributed to my then living grandchildren</label><br>
+
+    <input name="group1" id="other" type="radio" class="filled-in" value="other" ng-model="residual.distribution"/>
+    <label for="other">My then living children. If I have no living children, the item(s) shall be distributed to my then living grandchildren</label><br>
+
+    </div>
+<div class="" ng-show="spouseyes">
+
+  <p class="minorheading">Individual or Charity Beneficiaries</p>
+    <p>If multiple seperate by comma </p>
+  <input placeholder="Individual Name or Charity Name" type="text" ng-model="residual.namedbeneficiary">
+
+</div>
+
+</form>
+</div>
+<div class="millitary-buttons">
+  <div class="row center">
+        <a ng-click="submitResidual()" id="yesbtn" class="btn waves-effect waves-light yes-button">Submit</a>
+
+  </div>
+
+</div>
+</div>

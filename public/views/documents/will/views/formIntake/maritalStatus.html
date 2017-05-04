@@ -1,0 +1,52 @@
+<div class="inputform-watsonlooktext">
+  Select the most appropriate!
+</div>
+<br>
+<div class="military-animate animated fadeIn">
+<div class="will-language">
+  <div class="will-head-doc">Marital Status</div><br>
+
+<form class="" >
+    <input ng-click="spouseyes = !spouseyes" name="group1" id="marriedonce" type="radio" class="filled-in" value="marriedonce" ng-model="user.maritalStatus"/>
+    <label for="marriedonce">Married once, and my spouse is alive</label><br>
+
+    <input ng-click="spouseyes = !spouseyes" name="group1" id="marriedbutdivorced" type="radio" class="filled-in" value="marriedbutdivorced" ng-model="user.maritalStatus"/>
+    <label for="marriedbutdivorced">Presently Married, and had a prior marriage(previous spouse is deceased or divorced)</label><br>
+
+    <input name="group1"  id="widow" type="radio" class="filled-in" value="widow" ng-model="user.maritalStatus"/>
+    <label for="widow">Widow/Widower</label><br>
+
+    <input name="group1" id="divorced" type="radio" class="filled-in" value="divorced" ng-model="user.maritalStatus"/>
+    <label for="divorced">Divorced, not presently married</label><br>
+
+    <input name="group1"  id="single" type="radio" class="filled-in" value="single" ng-model="user.maritalStatus"/>
+    <label for="single">Single Never Married</label><br>
+
+    <input name="group1" ng-click="spouseyes = !spouseyes" id="other" type="radio" class="filled-in" value="other" ng-model="user.maritalStatus"/>
+    <label for="other">Other Relationship</label><br>
+
+<div class="" ng-show="spouseyes">
+
+  <p class="minorheading">Spouse Information</p>
+    <p>Full Legal Name of your Spouse or Partner </p>
+  <input placeholder="Full Legal Name of your Spourse or Partner" type="text" ng-model="user.spousename">
+
+  <p>Is your spouse/partner a U.S. citizen? </p>
+  <input id="spousecitizenyes" type="radio" class="filled-in" value="yes" name="group2" ng-model="user.spousecitizen"/>
+  <label for="spousecitizenyes">yes</label>
+
+  <input id="spousecitizenno" type="radio" class="filled-in" value="no" name="group2" ng-model="user.spousecitizen"/>
+  <label for="spousecitizenno">no</label> <br>
+
+</div>
+
+</form>
+</div>
+<div class="millitary-buttons">
+  <div class="row center">
+        <a ng-click="submitMaritalStatus(user)" id="yesbtn" class="btn waves-effect waves-light yes-button">Submit</a>
+
+  </div>
+
+</div>
+</div>

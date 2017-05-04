@@ -1,0 +1,29 @@
+<div class="inputform-watsonlooktext">
+  This is where you can list your personal wishes concerning distribution of specific personal effects. You dont have to list all your property just specific items, our next question will talk about what you want to do with the remainder of your estate.
+</div>
+<div class="inputform-watsonlooktext">
+  If you want to pass all your property without specifics click skip this section, you can always come back and add certain items to certain people or charities.
+</div>
+<br>
+<div class="disanimate animated fadeIn">
+<div class="will-head-doc">List Specific Personal Property for Distribution</div>
+
+  <form class="input-field inline" >
+
+    <div class="" ng-repeat="item in specific track by $index">
+
+    <input  placeholder="Description of Property" id="personalitem-{{$index}}" type="text" ng-model="specific[$index].personalitem">
+    <input  placeholder="Name of Beneficiary" id="beneficiary-{{$index}}" type="text" ng-model="specific[$index].beneficiary">
+
+  </div>
+
+  </form>
+  <div class="">
+    <button class="btn waves-effect waves-light" ng-click="aaddItem()" type="button" name="button">+Add Property</button><br><br>
+
+    <button class="btn waves-effect waves-light" ng-click="addPropItemSubmit(specific)" type="button" name="button">Submit</button>
+    <button class="btn waves-effect waves-light" ng-click="skipSpecific()" type="button" name="button">SKIP THIS SECTION</button>
+
+  </div>
+
+</div>

@@ -1,0 +1,32 @@
+<div class="inputform-watsonlooktext">
+  The following paragraph will be inputed in the will, below confirm Yes to add this to the powers clause of your Will No to exclude it.
+</div>
+<br>
+<div class="military-animate animated fadeIn">
+<div class="will-language">
+  <div class="will-head-doc">Personal Representative aka Executor </div>
+  <p class="military-yes-clause">Your court appointed Personal Representative (in other states called the “executor”) makes sure your estate is settled upon your death. This ordinarily involves going through probate, a court-administered procedure for settling an estate as provided in your Will or under State law. Probate involves petitioning a court for letters of appointment, settling creditor claims, finding and distributing assets, and filing any necessary tax returns. Any competent adult may serve as your Personal Representative. Personal Representatives have a duty not only to the beneficiaries but also to the creditors of the estate.
+</p>
+</div>
+<div class="childone-text">
+    Whom do you wish to have as your Personal Representative?
+</div>
+<form class="childone-form">
+    <div class="row center">
+        <a ng-click="addSpouseAsPersonalRep()" class="btn waves-effect waves-light yes-button">My Spouse/partner</a>
+        <a ng-click="addrepshow = !addrepshow"  class="btn waves-effect waves-light deny-button">Another Individual</a>
+    </div>
+</form>
+<div class="" ng-show="addrepshow">
+  <p class="minorheading">Name Personal Represenative</p>
+  <input type="text" name="prep" placeholder="Full Name"ng.model="user.personalrep">
+
+  <div class="millitary-buttons">
+    <div class="row center">
+    <a ng-click="executorsubmit(user)" id="yesbtn" class="btn waves-effect waves-light yes-button">Submit</a>
+
+    </div>
+</div>
+
+</div>
+</div>

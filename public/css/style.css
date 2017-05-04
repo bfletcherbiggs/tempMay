@@ -25,7 +25,14 @@ ul{
 .icon-block .material-icons {
 	font-size: inherit;
 }
-
+.logincontainer {
+  margin: auto;
+  height: 80vh;
+  padding-left: 200px;
+  padding-right: 200px;
+  color: white;
+   background-color: #0b2e3a;
+}
 /*Footer STYLES*/
 
 footer.page-footer {
@@ -416,6 +423,12 @@ padding-bottom: 20px;
  background-color: #F7F7F7;
 
 }
+/*================
+Minor GUARDIAN VIEW
+================*/
+.minorheading {
+  font-size: 18px;
+}
 
 /*=================
 AttorneyReferrel
@@ -471,5 +484,73 @@ Children 1 View
   height: 65px;
 }
 /*=================
-Children 2 View
+Calculate Assets Estate Value
 =================*/
+
+.estate-animate {
+ animation-delay: 1.3s;
+ background-color: #F7F7F7;
+ margin: 20px;
+
+}
+.calculateass {
+  padding-left: 60px;
+  padding-right: 60px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+/*=================
+personal info
+=================*/
+.formpersonal {
+  padding-left: 60px;
+  padding-right: 60px;
+  /*padding-top: px;*/
+  padding-bottom: 40px;
+}
+/*=================
+CHildren Input
+=================*/
+.childreninput {
+ animation-delay: 1.3s;
+ background-color: #F7F7F7;
+ margin: 20px;
+ padding-left: 40px;
+ padding-right: 40px;
+ /*padding-top: px;*/
+ padding-bottom: 25px;
+
+}
+.submitbuttonchild {
+  margin-top: 20px;
+  padding-top: 8px;
+  padding-right: 20px;
+}
+/*=================
+Disinherit Input
+=================*/
+.disanimate {
+ animation-delay: 1.3s;
+ background-color: #F7F7F7;
+ margin: 20px;
+ padding-left: 40px;
+ padding-right: 40px;
+ /*padding-top: px;*/
+ padding-bottom: 25px;
+
+}
+/*=================
+Progress Page
+=================*/
+.progressanimate {
+  background: url(sweettexture.jpg)
+  animation-delay: 1.3s;
+
+  margin: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
+  /*padding-top: px;*/
+  padding-bottom: 25px;
+
+}

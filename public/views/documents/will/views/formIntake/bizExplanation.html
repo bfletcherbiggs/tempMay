@@ -3,8 +3,8 @@
 <div class="attorney-animate animated fadeIn">
 <form class="att-form" >
   <label for="first_name">Explain your situation here. </label>
-  <textarea name="name" rows="8" cols="80" id="mbox" class="materialize-textarea"></textarea>
-  <button class="att-sub-button btn waves-effect waves-light" type="submit" onClick="" name="action">Send
+  <textarea name="name" rows="8" type="text" cols="80" id="mbox" class="materialize-textarea" ng-model="user.bizexplain"></textarea>
+  <button class="att-sub-button btn waves-effect waves-light" type="submit" ng-click="bizExplainSubmit(user)" name="action">Send
       <i class="material-icons left">send</i>
 </form>
 </div>

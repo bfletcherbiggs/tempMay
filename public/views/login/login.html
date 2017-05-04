@@ -1,26 +1,18 @@
-<div ng-init="returnUser=true"class="row login-container">
-    <div class="section"></div>
-    <main class="col l6">
-        <center>
-            <img class="responsive-img" style="width: 100px;" src="" />
-            <h5 class="white-text">Log In</h5>
-            <div class="section"></div>
-            <div class="row">
-                <div class="col s12">
-                    <ul class="tabs">
-                        <li class="tab col s6"><a
-                        ng-click="returnUser=true"
-                           href="#test1">Sign In</a></li>
-                        <li class="tab col s6"><a
-                          ng-click="returnUser=false"
-                         href="#test2">Sign Up</a></li>
-                    </ul>
-                </div>
-            </div>
-            <form class="col s12" method="post">
-                <login-new ng-hide="returnUser" class="loginnew"></login-new>
-                <login-old ng-show="returnUser" class="loginold"></login-old>
-            </form>
-        </center>
-    </main>
+
+<div class="row logincontainer">
+
+  <form>
+    <div>
+        <label>Username:</label>
+        <input type="text" name="username" ng-model="user.email"/>
+    </div>
+    <div>
+        <label>Password:</label>
+        <input type="password" name="password" ng-model="user.password"/>
+    </div>
+    <div>
+        <input ng-click="login(user)" type="submit" value="Log In"/>
+    </div>
+</form>
+
 </div>

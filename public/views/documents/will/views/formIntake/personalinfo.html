@@ -1,24 +1,39 @@
 <div class="inputform-watsonlooktext">
 This is your legal Name and current address. Will use these inputs on the will.
 </div>
-<div class="animated fadeIn">
-  <div class="row">
-    <form class="col 12 input-field" >
-      <div class="">
-        <input type="text" name="personfirst_name" ng-model="data.ufirstName" required />
-        <label for="personfirst_name">First Name</label>
-      </div>
-      <div class="">
-        <input type="text" name="middle_name" ng-model="data.uMiddleName" required />
-        <label for="middle_name">Middle Name</label>
-      </div>
-        <!-- <label for="last_name">Middle Name</label>
-        <input type="text" name="lastName" ng-model="data.ulastName" required />
-        <p>Other Names you use to sign Documents <input type="text" name="OtherName" ng-model="data.uOtherName" required /></p> -->
+<div class="military-animate animated fadeIn ">
+<div class="will-head-doc">Personal Information</div>
+    <form class="input-field" >
+      <div class="formpersonal">
+
+          <p>Full Legal Name</p>
+
+        <input type="text" placeholder="First Name" name="personfirst_name" ng-model="data.ufirstName" required />
+
+        <input type="text" placeholder="Middle Name" name="middle_name" ng-model="data.uMiddleName"  />
+
+        <input type="text" placeholder="Last Name" name="last_name" ng-model="data.uLastName" required />
+
+            <p>Other names you use to sign documents.</p>
+
+        <input type="text" placeholder="Other Names" name="last_name" ng-model="data.uOtherLegalNames" />
+
+            <p>Current Address</p>
+
+        <input type="text" placeholder="Address" name="address" ng-model="data.uAddress" />
+
+        <input type="text" placeholder="City" name="city" ng-model="data.uCity" />
+
+        <input type="text" placeholder="County" name="county" ng-model="data.uCounty" />
+
+        <input type="text" placeholder="State" name="county" ng-model="data.uState" />
+
+
         <button class=" btn waves-effect waves-light" ng-click="SendData(data)">Submit</button>
 
     </form>
-        <br>
+
+    <br>
 
     </div>
 </div>

@@ -32,7 +32,7 @@
         <form class="childone-form">
             <div class="row center">
                 <a ng-click="stepchildquestion = !stepchildquestion" id="yesbtn" class="btn waves-effect waves-light yes-button">YES</a>
-                <a ui-sref="chat." id="nobtn" class="btn waves-effect waves-light deny-button">NO</a>
+                <a ng-click="stepchildNoProvideTrigger()" id="nobtn" class="btn waves-effect waves-light deny-button">NO</a>
             </div>
         </form>
     </div>
@@ -42,8 +42,8 @@
         </div>
         <form class="childone-form">
             <div class="row center">
-                <a ui-sref="info" id="yesbtn" class="btn waves-effect waves-light yes-button">YES</a>
-                <a ui-sref="home" id="nobtn" class="btn waves-effect waves-light deny-button">NO</a>
+                <a ng-click="stepChildProvideTrigger()" id="yesbtn" class="btn waves-effect waves-light yes-button">YES</a>
+                <a  ng-click="stepchildNoProvideTrigger()" id="nobtn" class="btn waves-effect waves-light deny-button">NO</a>
             </div>
         </form>
     </div>

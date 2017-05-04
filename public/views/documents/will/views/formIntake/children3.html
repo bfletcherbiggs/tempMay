@@ -1,19 +1,21 @@
 <div class="inputform-watsonlooktext">
 Please add your Step Children below.
 </div>
-<div class="animated fadeIn">
+<div class="disanimate animated fadeIn">
 <form class="input-field inline">
-<div ng-repeat="item in stepnumberOfInputs track by $index" >
+<div ng-repeat="item in user track by $index" >
   <div class="childname">
-    <input placeholder="Name of Child" id="name-of-child-{{$index}}" type="text" ng-model="stepnumberOfInputs[$index].stepChild">
+    <input placeholder="Name of Child" id="name-of-child-{{$index}}" type="text" ng-model="user[$index].stepchild">
     <!-- <label for="name-of-child-{{$index}}">Name Of Child</label> -->
   </div>
   <div class="childdob input-field inline">
-    <input placeholder="Date of Birth" id="date-{{$index}}" class="datepicker" type="text" ng-model="stepnumberOfInputs[$index].stepchilddob">
+    <input placeholder="Date of Birth" id="date-{{$index}}" class="datepicker" type="text" ng-model="user[$index].stepchilddob">
   </div>
 </div>
-  <button class="btn waves-effect waves-light" ng-click="stepChildAddInput()" type="button" name="button">+Add Child</button>
-  <button class="btn waves-effect waves-light" ng-click="steplogInputs()" type="button" name="button">See Inputs</button>
-</form>
 
+</form>
+<div class="submitbuttonchild">
+  <button class="btn waves-effect waves-light" ng-click="stepChildAddInput()" type="button" name="button">+Add Child</button><br><br>
+  <button class="btn waves-effect waves-light" ng-click="submitUserStepChildren(user)" type="button" name="button">Submit</button>
+</div>
 </div>
