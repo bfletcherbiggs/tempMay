@@ -1,14 +1,5 @@
 angular.module("willapp").controller("chatCtrl", function($scope, $window,$location,$rootScope,$anchorScroll, $stateParams, $state, chatService, willService, $timeout){
 
-$scope.getProgress = () => {
-  willService.getProgress().then(function(response) {
-    console.log(response)
-    // Store it somewhere
-  })
-}
-
-$scope.getProgress()
-
 $scope.messages = [];
 $scope.userMessage="";
 var $chatMessages = jQuery('.chat-messages')
@@ -16,6 +7,7 @@ var $chatMessages = jQuery('.chat-messages')
 $scope.watsonMessage = function(){
   chatService.getMessage($scope.watsonMessage).then(function(response){
       $scope.messages.push(response)
+    console.log('would have gone to watson')
 
   })
 }
@@ -45,6 +37,7 @@ $scope.postUserMessage = function(userMessage) {
 }
 
 $scope.postSystemMessage = function(sysMessage) {
+  console.log('would have hit watson')
   $scope.messages.push("")
   postMessageToWatson(sysMessage)
 
@@ -88,7 +81,7 @@ function postMessageToWatson(message) {
       $state.go("chat.bizexplaination", {returning: true})
     }
     else if (response.includes('Thank You for your service') || response.includes('did not serve in the armed forces just click')) {
-      $state.go("chat.millitaryService", {returning: true})
+      $state.go("chat.militaryService", {returning: true})
     }
     else if (response.includes('Ok lets add your children to your will') || response.includes(' go ahead and update your children')) {
       $state.go("chat.childrentwo", {returning: true})

@@ -1,62 +1,64 @@
-const db = require('../db')
-const passport = require("../passport.js")
-const bcrypt = require('bcryptjs')
+const db = require( '../db' ),
+      bcrypt = require( 'bcryptjs' ),
+      passport = require( '../passport.js' ),
+      userFunc = require( '../functions.js' );
 
 
-function hash(given) {
-    const salt = bcrypt.genSaltSync(10);
-    return bcrypt.hashSync(given, salt)
+const hash = given => {
+    const salt = bcrypt.genSaltSync( 10 );
+    return bcrypt.hashSync( given, salt )
 }
 
 module.exports = {
-  home: (req, res) =>{
-     userFunc.handleResponse(res,200,'Welcome Home')
-   },
-   authfailed:(req, res)=> {
-       res.status(400).send("oops")
-   },
-   logout: (req,res)=>{
-     req.logout();
-     userFunc.handleResponse(res,200,'success')
-   },
+    logout: ( req, res ) => {
+        console.log('logout')
+        req.logout();
+        userFunc.handleResponse(res,200,'success')
+    },
+    create: ( req, res, next ) => {
+        const userInfo = {
+            email: req.body.email.toLowerCase(),
+            password: hash( req.body.password )
+        }
+        console.log(userInfo)
 
-  create: (req, res, next) => {
-
-          const userInfo = {
-              email: req.body.email.toLowerCase(),
-              password: hash(req.body.password),
-          }
-          db('user').returning('*').insert(userInfo)
-            .then ((response) =>{
-              return passport.authenticate('local', (err,user,info)=>{
-                if(user){
-                  delete user.password
-                  db('will_inputs').insert({user_id: user.id})
-                  .then(response => {
-                    return res.status(200).json(user)
-                  })
-                  .catch(err => {
-                    return res.status(500).json(err)
-                  })
-                }
-            })(req,res,next);
-          })
-          .catch((err)=>{
-            console.log("Error in create", err)
-            return res.status(500).json(err);
-        })
-},
-
-
-  getUser: function(req, res) {
-    console.log("Getting user")
-    // if (req.isAuthenticated()) {
-      delete req.user.password
-      return res.status(200).json(req.user)
-    // }
-    // return res.status(401).json({message: "Unauthorized"})
-  },
-
-
-
+        return db( 'user' )
+        .returning( '*' )
+        .insert( userInfo )
+        .then ( response => {
+            passport.authenticate( 'local', ( err, user, info ) => {
+                if( err ) { return next( err )}
+                if( !user ) { return res.status( 403 ).json( info ) }
+                req.login( user, err => {
+                    if( err ) { return next( err ) }
+                    return db( 'will_inputs' )
+                    .insert( { user_id:user.id } )
+                    .then( response => {
+                        return res.redirect( '/api/user/currentuser' )
+                    } )
+                    .catch( err => {
+                        return res.status(500).json(err)
+                    } )
+                } )
+            } )( req, res, next )
+        } )
+        .catch( err =>{
+            console.log(err)
+            return userFunc.handleResponse( res, 500, 'error', err )
+        } )
+    },
+    login: ( req, res, next ) => {
+        passport.authenticate( 'local', ( err, user, info ) => {
+            if( err ) { return next( err ) }
+            if( !user ) { return res.status( 403 ).json( info ) }
+            req.logIn( user, err => {
+                if ( err ) { return next( err ) }
+                return res.redirect( '/api/user/currentuser' )
+            } )
+        } )( req, res, next )
+    },
+    getUser: ( req, res ) => {
+        delete req.user.password
+        return res.status( 200 ).json( req.user )
+    }
 }

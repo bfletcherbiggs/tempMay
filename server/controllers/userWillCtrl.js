@@ -73,7 +73,8 @@ module.exports = {
       address: req.body.uAddress,
       city: req.body.uCity,
       county: req.body.uCounty,
-      state: req.body.uState
+      state: req.body.uState,
+      complete: req.body.complete
     }
     db('user')
     .where('user.id', user_id)

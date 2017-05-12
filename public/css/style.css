@@ -14,6 +14,19 @@
 ul{
   list-style-type: none;
 }
+
+@-webkit-keyframes autofill {
+    to {
+        color: white;
+        background: transparent;
+    }
+}
+
+input:-webkit-autofill {
+    -webkit-animation-name: autofill;
+    -webkit-animation-fill-mode: both;
+}
+
 .container{
 
   width: 90%;
@@ -27,17 +40,65 @@ ul{
 }
 .logincontainer {
   margin: auto;
-  height: 80vh;
+  height: calc(100vh - 150px);
   padding-left: 200px;
   padding-right: 200px;
   color: white;
    background-color: #0b2e3a;
 }
+
+::-ms-reveal,
+::-ms-clear {
+  display: none !important;
+}
+
+.my-toggle {
+  background: transparent;
+  border: 0;
+  border-radius: 0.25em;
+  color: #888;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: bold;
+  margin-right: 0.5em;
+  padding: 0.5em 0.5em;
+  text-transform: uppercase;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  line-height: initial;
+  letter-spacing:1px;
+  position:absolute;
+  top:50%;
+  right:0px;
+  margin-top:-13px;
+  display:block;
+}
+
+.my-toggle:hover,
+.my-toggle:focus {
+  background-color: #eee;
+  color: #555;
+  outline: transparent;
+}
+
+
+.hideShowPassword-wrapper{
+    position: relative;
+    display: inline-block;
+    vertical-align: baseline;
+    width: 100%!important;
+}
+.hideShowPassword-field{
+    margin: 0px;
+    padding-right: 0!important;
+}
+
 /*Footer STYLES*/
 
 footer.page-footer {
     padding-top: 5px;
     background-color: #0b2e3a;
+    height:50px;
 
     /*margin-top: 0px:*/
 }
