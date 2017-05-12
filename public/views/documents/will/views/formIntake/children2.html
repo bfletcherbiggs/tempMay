@@ -3,19 +3,21 @@ Please add your children below.
 </div>
 <div class="childreninput animated fadeIn">
 <form class="input-field inline">
-<div ng-repeat="item in user track by $index" >
+<div ng-repeat="item in user.children track by $index" >
   <div class="childname">
-    <input placeholder="Name of Child" id="name-of-child-{{$index}}" type="text" ng-model="user[$index].child">
+    <input placeholder="Name of Child" id="name-of-child-{{$index}}" type="text" ng-model="user.children[$index].child">
     <!-- <label for="name-of-child-{{$index}}">Name Of Child</label> -->
   </div>
   <div class="childdob input-field inline">
-    <input placeholder="Date of Birth" id="date-{{$index}}" class="datepicker" type="text" ng-model="user[$index].dob">
+    <input type="date" class="datepicker" id="dob-{{$index}}">
+    <!-- <md-datepicker ng-model="user.children[$index].dob" md-placeholder="Enter Birth Date"></md-datepicker> -->
+    <!-- ng-model="user.children[$index].dob" -->
   </div>
   <div class="childdob input-field inline">
-    <input id="biological-{{$index}}" type="radio" class="filled-in" value="biological" ng-model="user[$index].childlegalstatus"/>
+    <input id="biological-{{$index}}" type="radio" class="filled-in" value="biological" ng-model="user.children[$index].childlegalstatus"/>
       <label for="biological-{{$index}}">Biological</label>
 
-      <input id="adopted-{{$index}}" type="radio" class="filled-in" value="adopted" ng-model="user[$index].childlegalstatus"/>
+      <input id="adopted-{{$index}}" type="radio" class="filled-in" value="adopted" ng-model="user.children[$index].childlegalstatus"/>
         <label for="adopted-{{$index}}">Adopted</label>
 
   </div>
@@ -26,7 +28,7 @@ Please add your children below.
 <div class="submitbuttonchild">
   <button class="btn waves-effect waves-light" ng-click="addInput()" type="button" name="button">+Add Child</button><br><br>
 
-  <button class="btn waves-effect waves-light" ng-click="submitUserChildren(user)" type="button" name="button">Submit</button>
+  <button class="btn waves-effect waves-light" ng-click="submitUserChildren(user.children)" type="button" name="button">Submit</button>
 </div>
 
 

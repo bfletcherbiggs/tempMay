@@ -1,6 +1,6 @@
-const knex = require('knex')({
-  client: 'pg',
-  connection: 'postgres://Toby@localhost/willapp'
-})
+require( 'dotenv' ).config( { path: '../.env' } );
+
+const config = require( '../knexfile.js' ),
+      knex = require( 'knex' )( config[ process.env.NODE_ENV ] );
 
 module.exports = knex;

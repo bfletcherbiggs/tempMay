@@ -8,28 +8,28 @@ This is your legal Name and current address. Will use these inputs on the will.
 
           <p>Full Legal Name</p>
 
-        <input type="text" placeholder="First Name" name="personfirst_name" ng-model="data.ufirstName" required />
+        <input type="text" placeholder="First Name" name="personfirst_name" ng-model="user.ufirstName" required />
 
-        <input type="text" placeholder="Middle Name" name="middle_name" ng-model="data.uMiddleName"  />
+        <input type="text" placeholder="Middle Name" name="middle_name" ng-model="user.uMiddleName"  />
 
-        <input type="text" placeholder="Last Name" name="last_name" ng-model="data.uLastName" required />
+        <input type="text" placeholder="Last Name" name="last_name" ng-model="user.uLastName" required />
 
             <p>Other names you use to sign documents.</p>
 
-        <input type="text" placeholder="Other Names" name="last_name" ng-model="data.uOtherLegalNames" />
+        <input type="text" placeholder="Other Names" name="last_name" ng-model="user.uOtherLegalNames" />
 
             <p>Current Address</p>
 
-        <input type="text" placeholder="Address" name="address" ng-model="data.uAddress" />
+        <input type="text" placeholder="Address" name="address" ng-model="user.uAddress" />
 
-        <input type="text" placeholder="City" name="city" ng-model="data.uCity" />
+        <input type="text" placeholder="City" name="city" ng-model="user.uCity" />
 
-        <input type="text" placeholder="County" name="county" ng-model="data.uCounty" />
+        <input type="text" placeholder="County" name="county" ng-model="user.uCounty" />
 
-        <input type="text" placeholder="State" name="county" ng-model="data.uState" />
+        <input type="text" placeholder="State" name="state" ng-model="user.uState" />
 
 
-        <button class=" btn waves-effect waves-light" ng-click="SendData(data)">Submit</button>
+        <button class=" btn waves-effect waves-light" ng-click="SendData(user)">Submit</button>
 
     </form>
 

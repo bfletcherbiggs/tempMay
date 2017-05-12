@@ -4,10 +4,12 @@ angular.module('willapp').service("willService", function($http, $rootScope, cha
   self.setuser= {}
 
   this.setUser = function(setuser) {
-    console.log(setuser)
     self.setuser = setuser;
-    console.log(self.setuser)
-    // $rootScope.isAuthenticated = true;
+    $rootScope.isAuthenticated = true;
+  }
+  this.logoutUser = () => {
+    self.setuser = [];
+    $rootScope.isAuthenticated = false;
   }
 
   //========== GET USER'S PROGRESS ===========

@@ -1,8 +1,62 @@
 angular.module("willapp").controller("willCtrl", function($scope, $stateParams, $state, $timeout, willService, chatService){
 
+  $(document).ready(function(){
+
+      $('.datepicker').pickadate({
+        selectMonths: true,
+        selectYears: 40,
+        format: 'dd mmm yyyy',
+        formatSubmit: 'yyyy-MM-dd'
+       });
+
+  })
+
+
+$scope.personalInfoRM = false;
+$scope.martialStatusRM = false;
+$scope.miltaryClauseRM = false;
+$scope.childrenInfoRM = false;
+$scope.childrenGuardianRM = false;
+$scope.stepChildrenRM = false;
+$scope.executorRM = false;
+$scope.bondRequirementRM = false;
+$scope.disinheritListRM = false;
+$scope.estateDistributionRM = false;
+$scope.personalPropertyRM = false;
+
+
+$scope.getProgress = () => {
+  willService.getProgress()
+  .then( response => {
+    console.log(response)
+      $scope.user = {
+        //Personal Info
+        ufirstName: response.first_name,
+        uMiddleName: response.middle_name,
+        uLastName: response.last_name,
+        uOtherLegalNames: response.other_sign_names,
+        uAddress: response.address,
+        uCity: response.city,
+        uCounty: response.county,
+        uState: response.state,
+        //Marital Status
+        maritalStatus: response.marital_status,
+        spousename: response.spouse_name,
+        spousecitizen: response.spouse_citizen,
+        //Military Clause
+        miltaryClause: response.military_clause
+      }
+      //Children
+      response.children
+      ?$scope.user.children=response.children
+      :$scope.user.children=[{}]
+  })
+}
+
+$scope.getProgress()
+
  // ======== Biz Explaination Submition  ================
 $scope.bizExplainSubmit = function (user){
-    console.log(user)
     willService.updateBizExplaination(user).then(function(response) {
       $scope.$parent.postSystemMessage("bizexplain")
 
@@ -13,44 +67,52 @@ $scope.bizExplainSubmit = function (user){
 
 //========== CHILDREN 2 ADD CHIlDREN FORM ADD with button ===========
 
-       $scope.user = [];
-
        $scope.addInput = function () {
 
-         $scope.user.push({
-          //  user_id: willService.user.id,
+         $scope.user.children.push({
            child: "",
            dob: "",
            childlegalstatus: "",
          });
+         console.log($scope.user.children.length)
+         angular.element('#dob-'+($scope.user.children.length-1))
+         .pickadate({
+              selectMonths: true,
+              selectYears: 40,
+              format: 'dd mmm yyyy',
+              formatSubmit: 'yyyy-MM-dd'
+             });
 
-         $timeout(function(){
-           var dateId = '#date-' + ($scope.user.length - 1)
-           var $datePicker = jQuery(dateId)
-           console.log($datePicker)
-           $datePicker
-
-           .pickadate({
-             onSet: function(e) {
-               console.log(e)
-               this.close()
-             },
-             onClose: function() {
-               console.log("Close")
-             },
-             closeOnSelect: true,
-             selectMonths: true, // Creates a dropdown to control month
-             selectYears: 40 // Creates a dropdown of 15 years to control year
-           });
-
-         })
+        //  $timeout(function(){
+        //    var dateId = '#date-' + ($scope.user.children.length - 1)
+        //    var $datePicker = jQuery(dateId)
+        // //    console.log($datePicker)
+        //    $datePicker.pickadate({
+        //      selectMonths: true,
+        //      selectYears: 40,
+        //      format: 'dd mmm yyyy',
+        //      formatSubmit: 'yyyy-MM-dd'
+        //     });
+         //
+        //    .pickadate({
+        //      onSet: function(e) {
+        //        console.log(e)
+        //        this.close()
+        //      },
+        //      onClose: function() {
+        //        console.log("Close")
+        //      },
+        //      closeOnSelect: true,
+        //      selectMonths: true, // Creates a dropdown to control month
+        //      selectYears: 40 // Creates a dropdown of 15 years to control year
+        //    });
+         //
+        //  })
 
        };
-       $scope.logInputs = function() {
-          console.log($scope.user)
-        }
 
-      $scope.submitUserChildren = function(user){
+      $scope.submitUserChildren = function(children){
+        console.log(children)
 
           willService.submitUserChildren(user).then(function(response) {
             console.log(user)
@@ -170,14 +232,34 @@ $scope.bizExplainSubmit = function (user){
 
 // ========== PERSONAL INFO SUBMISSION =================
 
-  $scope.SendData = function(data) {
-    willService.postUserInfo(data).then(function(response) {
-      // Send some message
-      // $state.go('nextView')
-      $scope.$parent.postSystemMessage("personview")
-      $state.go("chat.maritalStatus", {returning: true})
-    }).catch(function(err) {
+  $scope.SendData = data => {
+    let searchArr = [
+      'ufirstName',
+      'uLastName',
+      'uAddress',
+      'uCity',
+      'uCounty',
+      'uState'
+    ]
 
+    for ( let item of searchArr ){
+      if( data[item] ){
+        $scope.personalInfoRM=true
+      }
+      else{
+        $scope.personalInfoRM=false
+        break;
+      }
+    }
+
+    data.complete = $scope.personalInfoRM
+
+    willService.postUserInfo(data).then( response => {
+      $scope.$parent.postSystemMessage( "personview" )
+      $state.go("chat.maritalStatus", { returning: true } )
+    })
+    .catch( err => {
+        console.log( err )
     })
   }
  //========== ASSET CALCULATION FUNCTION ===========
@@ -192,15 +274,19 @@ $scope.bizExplainSubmit = function (user){
   }
 
 // ======== Military Yes and No submit ================
-$scope.militaryyes = function(){
-  var clause = document.querySelector('.military-yes-clause').innerText
-  willService.postMilitaryClause(clause).then(function(response){
-      $scope.$parent.postSystemMessage("millitview")
-
-    $state.go("chat", {returning: true})
-
+$scope.militaryyes = () => {
+  let clause = document.querySelector( '.military-yes-clause' ).innerText
+  willService.postMilitaryClause( clause ).then( response => {
+    $scope.$parent.postSystemMessage( "millitview" )
+    $state.go( "chat", { returning: true } )
   })
- }
+}
+$scope.militaryno = () => {
+  willService.postMilitaryClause( '' ).then( response => {
+    $scope.$parent.postSystemMessage( "millitview" )
+    $state.go( "chat", { returning: true } )
+  })
+}
 
  // ======== Children 1 Questions Submit   ================
 
@@ -230,6 +316,7 @@ $scope.militaryyes = function(){
 
  // ======== Marital Status Page Submit ================
 $scope.submitMaritalStatus = function(user) {
+    // if(user.)
   console.log(user)
   willService.updateMaritalStatus(user).then(function(response) {
     $scope.$parent.postSystemMessage("maritalstatussubmit")
@@ -296,6 +383,8 @@ $scope.aaddItemLog = function() {
     $state.go("chat.progress", {returning: true})
 
   }
+
+
 
 
 

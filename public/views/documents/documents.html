@@ -1,5 +1,119 @@
 <div class="progressanimate animated fadeIn">
-
-    <img src="assets/roadmapgraphic.png" height="1589" width="645">
-
+    <div class="row">
+        <div class="col s12 hl">
+            Roadmap
+        </div>
+    </div>
+    <div class="row progress-section">
+        <div class="col s2">
+            <button ui-sref="chat.personinfo">
+                <i class="material-icons">
+                    {{personalInfoRM?'check_circle':'error'}}
+                </i>
+            </button>
+            <button ui-sref="chat.maritalStatus">
+                <i class="material-icons">
+                    {{martialStatusRM?'check_circle':'error'}}
+                </i>
+            </button>
+            <button ui-sref="chat.militaryService">
+                <i class="material-icons">
+                    {{miltaryClauseRM?'check_circle':'error'}}
+                </i>
+            </button>
+        </div>
+        <div class="col s10">
+            <a ui-sref="chat.personinfo">
+                <div>Personal Information</div>
+            </a>
+            <a ui-sref="chat.maritalStatus">
+                <div>Marital Status</div>
+            </a>
+            <a ui-sref="chat.militaryService">
+                <div>Military Clause</div>
+            </a>
+        </div>
+    </div>
+    <div class="row progress-section">
+        <div class="col s2">
+            <button ui-sref="chat.childrenone">
+                <i class="material-icons">
+                    {{childrenInfoRM?'check_circle':'error'}}
+                </i>
+            </button>
+            <button ui-sref="chat.minorGuardian">
+                <i class="material-icons">
+                    {{childrenGuardianRM?'check_circle':'error'}}
+                </i>
+            </button>
+            <button ui-sref="chat.childrenone">
+                <i class="material-icons">
+                    {{stepChildrenRM?'check_circle':'error'}}
+                </i>
+            </button>
+        </div>
+        <div class="col s10">
+            <a ui-sref="chat.childrenone">
+                <div>Children</div>
+            </a>
+            <a ui-sref="chat.minorGuardian">
+                <div>Minor Children Guardian</div>
+            </a>
+            <a ui-sref="chat.childrenone">
+                <div>Stepchildren</div>
+            </a>
+        </div>
+    </div>
+    <div class="row progress-section">
+        <div class="col s2">
+            <button ui-sref="chat.executor">
+                <i class="material-icons">
+                    {{executorRM?'check_circle':'error'}}
+                </i>
+            </button>
+            <!-- <button ui-sref="chat.residual">
+                <i class="material-icons">
+                    {{bondRequirementRM?'check_circle':'error'}}
+                </i>
+            </button> -->
+        </div>
+        <div class="col s10">
+            <a ui-sref="chat.executor">
+                <div>Executor</div>
+            </a>
+            <!-- <a ui-sref="chat.residual">
+                <div>Bond Requirement</div>
+            </a> -->
+        </div>
+    </div>
+    <div class="row progress-section">
+        <div class="col s2">
+            <button ui-sref="chat.disinherit1">
+                <i class="material-icons">
+                    {{disinheritListRM?'check_circle':'error'}}
+                </i>
+            </button>
+            <button ui-sref="chat.residual">
+                <i class="material-icons">
+                    {{estateDistributionRM?'check_circle':'error'}}
+                </i>
+            </button>
+            <button ui-sref="chat.estatevalue">
+                <i class="material-icons">
+                    {{personalPropertyRM?'check_circle':'error'}}
+                </i>
+            </button>
+        </div>
+        <div class="col s10">
+            <a ui-sref="chat.disinherit1">
+                <div>Disinherit List</div>
+            </a>
+            <a ui-sref="chat.residual">
+                <div>Estate Distribution</div>
+            </a>
+            <a ui-sref="chat.estatevalue">
+                <div>Personal Property Specific List</div>
+            </a>
+        </div>
+    </div>
 </div>

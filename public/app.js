@@ -25,8 +25,8 @@ angular.module("willapp", ["ui.router"])
     .state("chat", {
       url: "/chat",
       templateUrl: "/views/chat/chat_view.html",
-      controller: "chatCtrl"
-      // resolve: {authenticate: authenticate}
+      controller: "chatCtrl",
+      resolve: {authenticate: authenticate}
     })
     .state("chat.progress", {
       url: "/progress/:returning",
@@ -94,9 +94,9 @@ angular.module("willapp", ["ui.router"])
       parent: "chat",
       controller: "willCtrl"
     })
-    .state("chat.millitaryService", {
-      url: "/millitaryService/:returning",
-      templateUrl: "/views/documents/will/views/formIntake/millitaryService.html",
+    .state("chat.militaryService", {
+      url: "/militaryService/:returning",
+      templateUrl: "/views/documents/will/views/formIntake/militaryService.html",
       parent: "chat",
       controller: "willCtrl"
     })
@@ -131,26 +131,26 @@ angular.module("willapp", ["ui.router"])
       controller: "willCtrl"
     })
 
-    // function authenticate($q, $state, $timeout, $rootScope, $http) {
-    //  if ($rootScope.isAuthenticated) {
-    //    return $q.when()
-    //  } else {
-    //    $timeout(function() {
-    //      $state.go('login')
-    //    })
-    //    return $q.reject()
-    //  }
+    function authenticate($q, $state, $timeout, $rootScope, $http) {
+     if ($rootScope.isAuthenticated) {
+       return $q.when()
+     } else {
+       $timeout(function() {
+         $state.go('login')
+       })
+       return $q.reject()
+     }
 
- //      var deferred = $q.defer();
- //      $http.get('/api/user/login/currentuser').then(function(response) {
- //        if (response.status === 200) {
- //          deferred.resolve()
- //        } else {
- //          $state.go('home')
- //          deferred.reject()
- //        }
- //      })
- //      return deferred.promise;
- //
- // }
+      var deferred = $q.defer();
+      $http.get('/api/user/currentuser').then(function(response) {
+        if (response.status === 200) {
+          deferred.resolve()
+        } else {
+          $state.go('home')
+          deferred.reject()
+        }
+      })
+      return deferred.promise;
+
+ }
 })

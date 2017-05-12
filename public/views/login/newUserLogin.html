@@ -1,17 +1,22 @@
-<div class="row logincontainer">
-
+<div class="row logincontainer" >
   <form>
     <div>
         <label>Username:</label>
-        <input type="text" name="username" ng-model="user.email"/>
+        <input type="text" name="username" ng-model="user.email" autocomplete="new-password"/>
     </div>
-    <div>
+    <div class="hideShowPassword-wrapper">
         <label>Password:</label>
-        <input type="password" name="password" ng-model="user.password"/>
+        <input class="login-field  login-field-password" type="{{pwdtype}}" id="newpassword" ng-model="user.password" autocomplete="new-password"/>
+        <button ng-if="togglePWD" ng-click="togglePassword()" type="button" role="button" title="Hide Password" tabindex="0" class="my-toggle hideShowPassword-toggle-hide">Hide</button>
+        <button ng-if="!togglePWD" ng-click="togglePassword()" type="button" role="button" title="Hide Password" tabindex="0" class="my-toggle hideShowPassword-toggle-show">Show</button>
     </div>
     <div>
-        <input ng-click="newUserlogin(user)" type="submit" value="New Log In"/>
+        <input class="login-field  login-field-password" ng-click="newUserLogin(user)" type="submit" value="Create User"/>
     </div>
-</form>
-
+    <hr />
+    <div>
+      Already have an account?
+        <input ui-sref="login" type="button" value="Click Here"/>
+    </div>
+  </form>
 </div>

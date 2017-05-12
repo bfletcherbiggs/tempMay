@@ -1,0 +1,51 @@
+.progressanimate * {
+    margin:0 auto;
+    padding:0;
+    box-sizing: border-box;
+    text-align: center;
+    color: #0b2e3a;
+}
+.progressanimate .hl {
+    text-align: center;
+    font-size: 40px;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+.progressanimate .progress-section {
+    margin:2vmax 0;
+}
+.progressanimate .col {
+    display:flex;
+    flex-flow:column nowrap;
+}
+.progressanimate .s2 {
+    background-color: #E9E9E9;
+    border-radius:50px;
+    padding-bottom: 2vmax;
+}
+.progressanimate .s10{
+    padding-bottom:2vmax
+}
+.progressanimate .s10 a{
+    margin:0;
+}
+.progressanimate .s10 a div{
+    text-align: left;
+    text-transform: uppercase;
+    height: 2vmax;
+    margin-top:2vmax;
+    font-weight: 500;
+}
+.progressanimate button{
+    background-color: transparent;
+    border-radius: 50px;
+    height:2vmax;
+    width:2vmax;
+    border:none;
+    margin-top:2vmax;
+    color:white;
+    display:flex;
+}
+.progressanimate button i{
+    color: #0b2e3a;
+}

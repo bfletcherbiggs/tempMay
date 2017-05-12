@@ -1,10 +1,9 @@
-angular.module('willapp').service('loginSvc', function($http) {
+angular.module( 'willapp' ).service( 'loginSvc', function( $http ) {
 
-this.newUserlogin = (user)=> $http.post('/api/user/login/create',user)
+  this.newUserLogin = user => $http.post( '/api/user/create', user )
 
-  this.login = (user)=> $http.post('/api/user/login',user)
+  this.login = user => $http.post('/api/user/login', user )
 
+  this.logout = () => $http.get( 'api/user/logout' )
 
-  this.logout=()=>{return $http.get('/logout')}
-
-});
+} );

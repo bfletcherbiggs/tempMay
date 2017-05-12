@@ -7,10 +7,10 @@
   <div class="will-head-doc">Marital Status</div><br>
 
 <form class="" >
-    <input ng-click="spouseyes = !spouseyes" name="group1" id="marriedonce" type="radio" class="filled-in" value="marriedonce" ng-model="user.maritalStatus"/>
+    <input  name="group1" id="marriedonce" type="radio" class="filled-in" value="marriedonce" ng-model="user.maritalStatus"/>
     <label for="marriedonce">Married once, and my spouse is alive</label><br>
 
-    <input ng-click="spouseyes = !spouseyes" name="group1" id="marriedbutdivorced" type="radio" class="filled-in" value="marriedbutdivorced" ng-model="user.maritalStatus"/>
+    <input name="group1" id="marriedbutdivorced" type="radio" class="filled-in" value="marriedbutdivorced" ng-model="user.maritalStatus"/>
     <label for="marriedbutdivorced">Presently Married, and had a prior marriage(previous spouse is deceased or divorced)</label><br>
 
     <input name="group1"  id="widow" type="radio" class="filled-in" value="widow" ng-model="user.maritalStatus"/>
@@ -22,10 +22,14 @@
     <input name="group1"  id="single" type="radio" class="filled-in" value="single" ng-model="user.maritalStatus"/>
     <label for="single">Single Never Married</label><br>
 
-    <input name="group1" ng-click="spouseyes = !spouseyes" id="other" type="radio" class="filled-in" value="other" ng-model="user.maritalStatus"/>
+    <input name="group1" id="other" type="radio" class="filled-in" value="other" ng-model="user.maritalStatus"/>
     <label for="other">Other Relationship</label><br>
 
-<div class="" ng-show="spouseyes">
+<div
+  ng-if="user.maritalStatus === 'marriedonce'
+    || user.maritalStatus === 'marriedbutdivorced'
+    || user.maritalStatus === 'other'"
+>
 
   <p class="minorheading">Spouse Information</p>
     <p>Full Legal Name of your Spouse or Partner </p>

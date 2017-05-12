@@ -1,7 +1,9 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const session = require('express-session')
+const session = require('express-session');
 const cors = require('cors')
+//DEV Tools
+
 // First time we have to import passport.js, not the module, so that we can change the default code
 const passport = require('./server/passport')
 
@@ -10,6 +12,7 @@ const userWillRouter = require('./server/routes/userWillRouter.js')
 const userLoginRouter = require('./server/routes/userLoginRouter.js')
 const app = express();
 const port = 3000;
+
 
 
 app.use(express.static("./public"))
@@ -22,6 +25,6 @@ app.use(passport.session())
 
 app.use('/watson', watsonRouter)
 app.use('/api/user/will', userWillRouter)
-app.use('/api/user/login', userLoginRouter)
+app.use('/api/user', userLoginRouter)
 
 app.listen(3000)
